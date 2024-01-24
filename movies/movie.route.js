@@ -1,6 +1,8 @@
 import express from "express";
 import { Movies } from "./movie.model.js";
 import mongoose from "mongoose";
+import { validateSchema_ReqBody } from "../middleware/validation.middleware.js";
+import { movieValidate } from "./movie.validation.js";
 
 const router = express.Router();
 
@@ -13,6 +15,8 @@ router.post("/movies/add", async (req, res) => {
   return res.status(201).send({ message: "Movie added successfully" });
 });
 //! Get Movies Details by ID
+
+
 router.get("/movies/details/:id", async (req, res) => {
   // Extract Id from req.params
   const movieId = req.params.id;
