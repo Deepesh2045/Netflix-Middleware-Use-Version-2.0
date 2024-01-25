@@ -15,7 +15,7 @@ app.use(movieRoutes)
 app.use(userRoute)
 
 // app port and server here
-const port = 3002;
+const port = 4000;
 app.listen(port, () => {
   console.log(`App is listening on ${port}`);
 });

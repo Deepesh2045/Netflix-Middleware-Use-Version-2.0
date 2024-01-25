@@ -1,7 +1,8 @@
 import express from "express";
 import { User } from "./user.model.js";
 import { addUserSchema } from "./user.validation.js";
-import { validateSchema_ReqBody } from "../middleware/validation.middleware.js";
+import { validateReqBody } from "../middleware/validation.middleware.js";
+
 
 const router = express.Router();
 
@@ -43,7 +44,7 @@ router.post(
   //     return res.status(409).send({ message: error.message });
   //   }
   // },
-  validateSchema_ReqBody(addUserSchema),
+  validateReqBody(addUserSchema),
   async (req, res) => {
     // extract new user from req.body
     const newUser = req.body;
